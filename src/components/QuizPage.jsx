@@ -3,12 +3,16 @@ import { nanoid } from "nanoid";
 import Quiz from "./Quiz.jsx";
 
 // function for decoding html entities for render
+// https://stackoverflow.com/questions/1912501/unescape-html-entities-in-javascript
+// https://stackoverflow.com/a/34064434
 function htmlDecode(input) {
   const doc = new DOMParser().parseFromString(input, "text/html");
   return doc.documentElement.textContent;
 }
 
 // function for shuffling elements of array following Durstenfeld Shuffle
+// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array/12646864#12646864
+// https://stackoverflow.com/a/12646864
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
