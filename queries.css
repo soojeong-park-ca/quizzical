@@ -1,0 +1,77 @@
+/**** Mobile-first Flow ****/
+/**** MEDIA QUERIES ****/
+
+/**************************/
+/* TABLET: approx. 425px and up */
+@media (min-width: 26.5em) {
+  .quizPageMain {
+    padding-inline: 2rem;
+  }
+
+  .displayedScore {
+    font-size: 1rem;
+    line-height: 1.1rem;
+  }
+}
+
+/**************************/
+/* approx. 500px and up */
+@media (min-width: 31.25em) {
+  .multipleChoices {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+  }
+
+  .afterSubmit {
+    flex-direction: row;
+    gap: 3rem;
+    margin-top: 1.5rem;
+  }
+
+  .displayedScore {
+    margin-top: 0;
+  }
+}
+
+/**************************/
+/* LAPTOP: approx. 769px and up */
+@media (min-width: 48em) {
+  .quizPageMain {
+    padding-inline: 4.5rem;
+  }
+
+  .multipleChoices {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .choiceContainer {
+    padding-inline: 0.75rem;
+  }
+}
+
+/**************************/
+/* approx. 900px and up */
+@media (min-width: 56.25em) {
+  .afterSubmit {
+    margin-top: 1.75rem;
+  }
+}
+
+/**************************/
+/* approx. 1024px and up */
+@media (min-width: 64em) {
+  .quiz {
+    align-items: center;
+    gap: 1.5rem;
+    padding-block: 2rem;
+  }
+
+  .btnNotSubmit {
+    margin-block: 2rem 1.5rem;
+  }
+
+  .afterSubmit {
+    margin-block: 2rem 1.5rem;
+  }
+}
