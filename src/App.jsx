@@ -18,7 +18,7 @@ function App() {
       setShouldFetchNewQuiz(false);
     }
 
-    shouldFetchNewQuiz && getTriviaData(3);
+    shouldFetchNewQuiz && getTriviaData(5);
   }, [shouldFetchNewQuiz]);
 
   const quizCategory = quizData.length > 0 ? quizData[0].category : "";
@@ -30,8 +30,6 @@ function App() {
   function makeNewQuiz() {
     setShouldFetchNewQuiz(true);
   }
-
-  console.log(quizData);
 
   return (
     <div className="App">

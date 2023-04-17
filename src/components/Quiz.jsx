@@ -17,8 +17,6 @@ export default function Quiz(props) {
     }));
   }
 
-  console.log("allOptions: ", allOptions);
-
   // 2. toggle clicked / unclicked option as chosen option
   function toggleChoice(optionId) {
     setAllOptions(prevOptions =>
