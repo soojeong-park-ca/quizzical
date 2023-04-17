@@ -23,7 +23,7 @@ mobile version :
 
 ### Demo Link
 
-**[💻 Live Site URL]()**
+**[💻 Live Site URL](https://quizzical-spark.netlify.app/)**
 
 ## About the Project
 
