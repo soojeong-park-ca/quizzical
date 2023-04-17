@@ -8,7 +8,6 @@ export default function Quiz(props) {
 
   // Fns
   // 1. setting data for each option (init)
-  // array of option objects
   function settingOptionObject() {
     return props.allChoices.map(choice => ({
       id: nanoid(),
@@ -17,6 +16,8 @@ export default function Quiz(props) {
       isChosen: false,
     }));
   }
+
+  console.log("allOptions: ", allOptions);
 
   // 2. toggle clicked / unclicked option as chosen option
   function toggleChoice(optionId) {
@@ -30,27 +31,22 @@ export default function Quiz(props) {
   }
 
   // 3. updating score of current quiz
-  // whenever something from the state allOptions changes
   useEffect(() => {
     allOptions.forEach(option => {
       if (option.isChosen && option.isCorrect) {
-        // correct answer chosen
         if (score === 1) {
-          // if it was already chosen score stays the same
-          setScore(prevScore => prevScore);
+          setScore(1);
         } else if (score === 0) {
-          // if it wasn't chosen already score + 1
-          setScore(prevScore => prevScore + 1);
+          setScore(1);
         }
       } else if (option.isChosen && !option.isCorrect) {
-        // wrong answer chosen
         if (score === 1) {
-          // if correct answer was chosen before but usesr changes to wrong answer
-          setScore(prevScore => prevScore - 1);
+          setScore(0);
         } else if (score === 0) {
-          // if wrong answer was chosen before and usesr changes to a different wrong answer
-          setScore(prevScore => prevScore);
+          setScore(0);
         }
+      } else if (!option.isChosen && option.isCorrect) {
+        setScore(0);
       } else setScore(prevScore => prevScore);
     });
   }, [allOptions]);
